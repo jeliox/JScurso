@@ -54,36 +54,57 @@ function mostrar(){
 let aver = [];
 function menormayor() { 
     let prices = totalprod.sort((a,b) => parseFloat(a.precio) - parseFloat(b.precio));
-    console.log(prices);
-    let padre1 = document.getElementById('shower')
+    let padre1 = document.getElementById('shower');
     if (aver == ""){
-  for (const i of prices){
-    li = document.createElement('li');
-    li.innerHTML = i.nombre + " $" + i.precio;
-    padre1.appendChild(li);
+        for (const i of prices){
+            li = document.createElement('li');
+            li.innerHTML = i.nombre + " $" + i.precio;
+            padre1.appendChild(li);
+            aver = document.getElementsByTagName('li')
     }
-    console.log(padre1)
-     aver = document.getElementsByTagName('li')
+    console.log(aver.length)
     } else {
-        for (const i of prices)
-        padre1.remove()
-        aver = [];
-        let padre1 = document.getElementById('shower')
+            while (padre1.hasChildNodes()){
+                padre1.removeChild(padre1.firstChild);
+            }
+         aver = [];
     } 
 }
 function menor4k(){
-    const filter1 = totalprod.filter(element => element.precio < 4000);
-    for (let i=0; i < filter1.length; i++){
+    let filter1 = totalprod.filter(element => element.precio < 4000);
+    let padre2 = document.getElementById('shower');
+    if (aver == ""){
+        for (const i of filter1){
+            li = document.createElement('li');
+            li.innerHTML = i.nombre + " $" + i.precio;
+            padre2.appendChild(li);
+            aver = document.getElementsByTagName('li')
+    }
     
-        alert([filter1[i].nombre, "  " + filter1[i].precio]);
-        }
+    } else {
+            while (padre2.hasChildNodes()){
+                padre2.removeChild(padre2.firstChild);
+            }
+         aver = [];
+    } 
 }
 function mayor4k() {
     const filter2 = totalprod.filter(element => element.precio >= 4000);
-    for (let i=0; i < filter2.length; i++){
+    let padre3 = document.getElementById('shower');
+    if (aver == ""){
+        for (const i of filter2){
+            li = document.createElement('li');
+            li.innerHTML = i.nombre + " $" + i.precio;
+            padre3.appendChild(li);
+            aver = document.getElementsByTagName('li')
+    }
     
-        alert([filter2[i].nombre, "  " + filter2[i].precio]);
-        }
+    } else {
+            while (padre3.hasChildNodes()){
+                padre3.removeChild(padre3.firstChild);
+            }
+         aver = [];
+    } 
 }
 // Botones
 let btnfiltro = document.getElementById('btnfiltro');
@@ -97,6 +118,19 @@ btn32.addEventListener('click',mayor4k);
 
 let btn33 = document.getElementById('btn33');
 btn33.addEventListener('click',menor4k);
+
+let btnp1 = document.getElementById('btnp1');
+btnp1.addEventListener('click',descuento(prod1));
+let btnp2 = document.getElementById('btnp2');
+btnp2.addEventListener('click',descuento(prod2));
+let btnp3 = document.getElementById('btnp3');
+btnp3.addEventListener('click',descuento(prod3));
+let btnp4 = document.getElementById('btnp4');
+btnp4.addEventListener('click',descuento(products[0]));
+let btnp5 = document.getElementById('btnp5');
+btnp5.addEventListener('click',descuento(products[1]));
+let btnp6 = document.getElementById('btnp6');
+btnp6.addEventListener('click',descuento(products[2]));
 
 // Funcion para obtener la info del usurario 
 function comprar(a){
