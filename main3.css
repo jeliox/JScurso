@@ -6,6 +6,9 @@ body {
 #goaway {
     display: none;
 }
+#formulario{
+    display: none;
+}
 .container {
     margin: 10px 10px 70px ;
     width: 90%;

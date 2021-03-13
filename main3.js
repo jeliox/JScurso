@@ -15,9 +15,19 @@ class productos {
         this.precio = this.precio * 0.9 ;
         
     }
+    antidiscount(){
+        
+        this.precio = this.precio / 0.9 ;
+        
+    }
 
     sumaiva() {
         this.precio = this.precio * 1.21;
+    }
+    antiiva(){
+        
+        this.precio = this.precio / 1.21;
+        
     }
     
     venta() {
@@ -108,7 +118,7 @@ function mayor4k() {
 }
 // Botones
 let btnfiltro = document.getElementById('btnfiltro');
-btnfiltro.addEventListener('click', mostrar)
+btnfiltro.addEventListener('click', mostrar);
 
 let btnm = document.getElementById('btn31');
 btnm.addEventListener('click',menormayor);
@@ -120,46 +130,76 @@ let btn33 = document.getElementById('btn33');
 btn33.addEventListener('click',menor4k);
 
 let btnp1 = document.getElementById('btnp1');
-btnp1.addEventListener('click',descuento(prod1));
+btnp1.addEventListener('click',letsee.bind(this,prod1));
+
 let btnp2 = document.getElementById('btnp2');
-btnp2.addEventListener('click',descuento(prod2));
+btnp2.addEventListener('click',letsee.bind(this,prod2));
+
 let btnp3 = document.getElementById('btnp3');
-btnp3.addEventListener('click',descuento(prod3));
+btnp3.addEventListener('click',letsee.bind(this,prod3));
+
 let btnp4 = document.getElementById('btnp4');
-btnp4.addEventListener('click',descuento(products[0]));
+btnp4.addEventListener('click',letsee.bind(this,products[0]));
+
 let btnp5 = document.getElementById('btnp5');
-btnp5.addEventListener('click',descuento(products[1]));
+btnp5.addEventListener('click',letsee.bind(this,products[1]));
+
 let btnp6 = document.getElementById('btnp6');
-btnp6.addEventListener('click',descuento(products[2]));
+btnp6.addEventListener('click',letsee.bind(this,products[2]));
 
 // Funcion para obtener la info del usurario 
 function comprar(a){
+    console.log(a.precio);
     a.sumaiva();
-    alert("el precio con es iva es de: " + a.precio)
-    console.log(a.stock)
+    const iva = a.precio;
+    let madre = document.getElementById('shower');
+    let descuen = document.createElement('h3');
+    descuen.innerHTML= "El precio con IVA es de: $" + iva;
+    madre.appendChild(descuen);
+    aver = document.getElementsByTagName('h3')
+    //console.log(a.stock)
     a.venta();
-    console.log(a.stock)
-
+    //console.log(a.stock)
+    a.antiiva();
+    console.log(a.precio)
+    console.log(iva);
+    
 }
-function descuento(son) {
 
-    dato = prompt("Desea aplicar un descuento del 10%?, S: sí o N: no");
-    
-        console.log(son);
-    if (dato != ""){
-        if (dato == "S" || dato == "s" ){
-    
-            console.log(son.precio);
-            console.log(son.discount10());
-            console.log(son.precio);
-            alert("su precio con descuento es de: " + son.precio)
-            comprar(son);
-        } else {
-        alert("No se aplica descuento");
+function letsee (son){
+    if (aver == ""){
         comprar(son);
-        }
     } else {
-        alert("Por favor intente de nuevo")
+        let madre = document.getElementById('shower');
+        while (madre.hasChildNodes()){
+            madre.removeChild(madre.firstChild);
+        }
+      aver = [];
     }
+    formmsee();
+}
+function formmsee(){
+    let ancla = document.getElementById('formulario1')
+    if (ancla.style.display === "none") {
+        ancla.style.display = "block";
+      } else {
+        ancla.style.display = "none";
+      }
+}
+let myform = document.getElementById('formulario1');
+myform.addEventListener('submit',formvalidation);
+function formvalidation(e){
+    //e.preventDefault();
+    let formu = e.target;
+    console.log(formu.children)
+    const parajson =`Nombre ${formu.children[0].value}
+                        Apellido ${formu.children[2].value}
+                        DNI ${formu.children[4].value}
+                        Telefono ${formu.children[6].value}
+                        Correo ${formu.children[8].value}`
+    
 
+
+    tosave = JSON.stringify(parajson);
+    localStorage.setItem('formualrio1',tosave);
 }
