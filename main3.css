@@ -1,6 +1,9 @@
 
 body {
-    background: #F5FAFB;
+    background-image: url('marinae.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'Montserrat', sans-serif;
 }
 #goaway {
@@ -22,13 +25,19 @@ body {
 }
 .columna {
     background: lightgrey;
-    color: rgb(16, 26, 83);
+    color: rgb(200,146,155);
     border: 1px solid rgb(16,26,83);
     margin: 0 auto;
     padding: 10px;
     border-radius: 25px;
     box-shadow: 10px 10px 5px grey;
     width: 23%;
+    box-sizing: border-box;
+}
+.columna2 {
+    width: 20rem;
+    margin: 0 auto;
+    padding: 10px;
     box-sizing: border-box;
 }
 .head {
@@ -41,12 +50,12 @@ nav {
     justify-content: space-around;
     padding: 10px;
     margin: 10px 10px 20px 10px; 
+    border: black;
 }
 .navlink {
     display: inline-block;
     color: black;
     text-decoration: none;
-    background: #B9EBF5;
     padding: 10px;
     background-size: 10px 20px;
     border-radius: 5px;
