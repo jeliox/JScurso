@@ -74,7 +74,7 @@ function comprar(a){
     let descuen = document.createElement('h3');
     descuen.innerHTML= "El precio con IVA es de: $" + iva;
     madre.appendChild(descuen);
-    aver = document.getElementsByTagName('h3')
+    aver = document.getElementsByTagName('h3');
     //console.log(a.stock)
     a.venta();
     //console.log(a.stock)
