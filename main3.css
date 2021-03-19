@@ -36,9 +36,10 @@ body {
 }
 .columna2 {
     width: 20rem;
-    margin: 0 auto;
+    margin: 5% auto;
     padding: 10px;
     box-sizing: border-box;
+    align-items: center;
 }
 .head {
 

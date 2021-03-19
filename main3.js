@@ -4,14 +4,14 @@
 // let btnfiltro = document.getElementById('btnfiltro');
 // btnfiltro.addEventListener('click', mostrar);
 
-// let btnm = document.getElementById('btn31');
-// btnm.addEventListener('click',menormayor);
+let btnm = document.getElementById('btn31');
+btnm.addEventListener('click',menormayor);
 
-// let btn32 = document.getElementById('btn32');
-// btn32.addEventListener('click',mayor4k);
+let btn32 = document.getElementById('btn32');
+btn32.addEventListener('click',mayor4k);
 
-// let btn33 = document.getElementById('btn33');
-// btn33.addEventListener('click',menor4k);
+let btn33 = document.getElementById('btn33');
+btn33.addEventListener('click',menor4k);
 
 let btnp1 = document.getElementById('btnp1');
 btnp1.addEventListener('click',letsee.bind(this,prod1));
