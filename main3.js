@@ -5,13 +5,13 @@
 // btnfiltro.addEventListener('click', mostrar);
 
 let btnm = document.getElementById('btn31');
-btnm.addEventListener('click',menormayor);
+btnm.addEventListener('click',rehab);
 
 let btn32 = document.getElementById('btn32');
-btn32.addEventListener('click',mayor4k);
+btn32.addEventListener('click',pieles);
 
 let btn33 = document.getElementById('btn33');
-btn33.addEventListener('click',menor4k);
+btn33.addEventListener('click',masaj);
 
 let btnp1 = document.getElementById('btnp1');
 btnp1.addEventListener('click',letsee.bind(this,prod1));
@@ -30,6 +30,9 @@ btnp5.addEventListener('click',letsee.bind(this,products[1]));
 
 let btnp6 = document.getElementById('btnp6');
 btnp6.addEventListener('click',letsee.bind(this,products[2]));
+// <---------------Filtros de Cards usando jQuery ---------->
+
+
 
 // <-------------- Formulario -----------------> 
 let myform = document.getElementById('formulario1');

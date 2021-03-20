@@ -11,60 +11,137 @@ function mostrar(){
 
 }
 let aver = [];
-function menormayor() { 
-    let prices = totalprod.sort((a,b) => parseFloat(a.precio) - parseFloat(b.precio));
+// function menormayor() { 
+//     let prices = totalprod.sort((a,b) => parseFloat(a.precio) - parseFloat(b.precio));
+//     let padre1 = document.getElementById('shower');
+//     if (aver == ""){
+//         for (const i of prices){
+//             li = document.createElement('li');
+//             li.innerHTML = i.nombre + " $" + i.precio;
+//             padre1.appendChild(li);
+//             aver = document.getElementsByTagName('li')
+//     }
+//     console.log(aver.length)
+//     } else {
+//             while (padre1.hasChildNodes()){
+//                 padre1.removeChild(padre1.firstChild);
+//             }
+//          aver = [];
+//     } 
+// }
+function rehab() {
+
+    let filtrados = totalprod.filter(element => element.id < 3);
+    let piel = $('.skins .card').css('display', 'none');
+    let masaje = $('.massage .card').css('display', 'none');
     let padre1 = document.getElementById('shower');
+    console.log(aver);
     if (aver == ""){
-        for (const i of prices){
+        for (const i of filtrados){
             li = document.createElement('li');
-            li.innerHTML = i.nombre + " $" + i.precio;
-            padre1.appendChild(li);
+            // li.innerHTML = i.nombre + " $" + i.precio;
+            // padre1.appendChild(li);
             aver = document.getElementsByTagName('li')
     }
-    console.log(aver.length)
+    
     } else {
+            piel = $('.skins .card').css('display', 'flex');
+            masaje = $('.massage .card').css('display', 'flex');
+            $('.rehabs .card').css('display', 'flex');
             while (padre1.hasChildNodes()){
                 padre1.removeChild(padre1.firstChild);
             }
          aver = [];
     } 
-}
-function menor4k(){
-    let filter1 = totalprod.filter(element => element.precio < 4000);
-    let padre2 = document.getElementById('shower');
+} 
+function masaj() {
+
+    let filtrados = totalprod.filter(element => element.id < 3);
+    let piel = $('.skins .card').css('display', 'none');
+    let rehabi = $('.rehabs .card').css('display', 'none');
+    let padre1 = document.getElementById('shower');
+    console.log(aver);
     if (aver == ""){
-        for (const i of filter1){
+        for (const i of filtrados){
             li = document.createElement('li');
-            li.innerHTML = i.nombre + " $" + i.precio;
-            padre2.appendChild(li);
+            // li.innerHTML = i.nombre + " $" + i.precio;
+            // padre1.appendChild(li);
             aver = document.getElementsByTagName('li')
     }
     
     } else {
-            while (padre2.hasChildNodes()){
-                padre2.removeChild(padre2.firstChild);
+            piel = $('.skins .card').css('display', 'flex');
+            rehabi = $('.rehabs .card').css('display', 'flex');
+            $('.massage .card').css('display', 'flex');
+            while (padre1.hasChildNodes()){
+                padre1.removeChild(padre1.firstChild);
             }
          aver = [];
     } 
-}
-function mayor4k() {
-    const filter2 = totalprod.filter(element => element.precio >= 4000);
-    let padre3 = document.getElementById('shower');
+} 
+function pieles() {
+
+    let filtrados = totalprod.filter(element => element.id < 3);
+    let rehabi = $('.rehabs .card').css('display', 'none');
+    let masaje = $('.massage .card').css('display', 'none');
+    let padre1 = document.getElementById('shower');
+    console.log(aver);
     if (aver == ""){
-        for (const i of filter2){
+        for (const i of filtrados){
             li = document.createElement('li');
-            li.innerHTML = i.nombre + " $" + i.precio;
-            padre3.appendChild(li);
+            // li.innerHTML = i.nombre + " $" + i.precio;
+            // padre1.appendChild(li);
             aver = document.getElementsByTagName('li')
+            console.log(aver);
     }
-    
+   
     } else {
-            while (padre3.hasChildNodes()){
-                padre3.removeChild(padre3.firstChild);
+            rehabi = $('.rehabs .card').css('display', 'flex');
+            masaje = $('.massage .card').css('display', 'flex');
+            $('.skins .card').css('display', 'flex');
+            while (padre1.hasChildNodes()){
+                padre1.removeChild(padre1.firstChild);
             }
          aver = [];
     } 
-}
+} 
+
+// function menor4k(){
+//     let filter1 = totalprod.filter(element => element.precio < 4000);
+//     let padre2 = document.getElementById('shower');
+//     if (aver == ""){
+//         for (const i of filter1){
+//             li = document.createElement('li');
+//             li.innerHTML = i.nombre + " $" + i.precio;
+//             padre2.appendChild(li);
+//             aver = document.getElementsByTagName('li')
+//     }
+    
+//     } else {
+//             while (padre2.hasChildNodes()){
+//                 padre2.removeChild(padre2.firstChild);
+//             }
+//          aver = [];
+//     } 
+// }
+// function mayor4k() {
+//     const filter2 = totalprod.filter(element => element.precio >= 4000);
+//     let padre3 = document.getElementById('shower');
+//     if (aver == ""){
+//         for (const i of filter2){
+//             li = document.createElement('li');
+//             li.innerHTML = i.nombre + " $" + i.precio;
+//             padre3.appendChild(li);
+//             aver = document.getElementsByTagName('li')
+//     }
+    
+//     } else {
+//             while (padre3.hasChildNodes()){
+//                 padre3.removeChild(padre3.firstChild);
+//             }
+//          aver = [];
+//     } 
+// }
 // Funcion para obtener la info del usurario 
 function comprar(a){
     console.log(a.precio);
