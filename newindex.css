@@ -1,4 +1,6 @@
 
+/*Generales*/
+
 body {
     background-image: url('marinae.png');
     background-repeat: no-repeat;
@@ -23,6 +25,60 @@ body {
 .text-center {
     text-align: center;
 }
+
+/*Barra*/
+
+.barra {
+    display: block;
+    background-color:rgba(200, 146, 155, 0.75);
+    margin: 20px 0px;
+    padding: 0 25px;
+}
+
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        height: 90px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: black;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo a{
+    font-size: 51px;
+    font-family: 'Playfair Display', serif;
+    font-weight: lighter;
+}
+
+.enlaces a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .enlaces {
+        display: flex;
+        align-self: center;
+        
+    }
+}
+
+/*Contenido*/
+
 .columna {
     background: lightgrey;
     color: rgb(200,146,155);
@@ -41,27 +97,7 @@ body {
     box-sizing: border-box;
     align-items: center;
 }
-head {
 
-    margin: auto;
-    text-align: center;
-}
-nav {
-    display: flex;
-    background: none;
-    justify-content: space-around;
-    padding: 10px;
-    margin: 10px 10px 20px 10px; 
-    border: black;
-}
-.navlink {
-    display: inline-block;
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    background-size: 10px 20px;
-    border-radius: 5px;
-}
 .precio {
     font-size: 500 px;
 }
@@ -100,4 +136,17 @@ nav {
 .imagen1 {
     width: 200px;
     height: auto;
+}
+
+/*Footer*/
+
+footer .barra {
+    margin:0;
+    padding: 0 25px;
+    background-color: rgba(255, 255, 255, 0.788);
+    border-top: grey 0.5px solid;
+}
+
+footer a {
+    color: black;
 }
