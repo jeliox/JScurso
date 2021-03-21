@@ -51,6 +51,7 @@ function rehab() {
             while (padre1.hasChildNodes()){
                 padre1.removeChild(padre1.firstChild);
             }
+        
          aver = [];
     } 
 } 
@@ -76,7 +77,8 @@ function masaj() {
             while (padre1.hasChildNodes()){
                 padre1.removeChild(padre1.firstChild);
             }
-         aver = [];
+         
+            aver = [];
     } 
 } 
 function pieles() {
@@ -102,6 +104,7 @@ function pieles() {
             while (padre1.hasChildNodes()){
                 padre1.removeChild(padre1.firstChild);
             }
+        
          aver = [];
     } 
 } 
@@ -145,13 +148,17 @@ function pieles() {
 // Funcion para obtener la info del usurario 
 function comprar(a){
     console.log(a.precio);
+    prodid= a.id;
+    let nombrecito = a.nombre;
     a.sumaiva();
     const iva = a.precio;
     let madre = document.getElementById('shower');
-    let descuen = document.createElement('h3');
-    descuen.innerHTML= "El precio con IVA es de: $" + iva;
+    let descuen = document.createElement('h5');
+    
+    descuen.innerHTML= "El servicio seleccionado ha sido " + nombrecito.toLowerCase();
     madre.appendChild(descuen);
-    aver = document.getElementsByTagName('h3');
+    aver = document.getElementsByTagName('h5');
+    $('h5').css('text-align','center');
     //console.log(a.stock)
     a.venta();
     //console.log(a.stock)
@@ -166,6 +173,8 @@ function letsee (son){
         comprar(son);
     } else {
         let madre = document.getElementById('shower');
+        let ancla = document.getElementById('formulario1')
+        ancla.style.display = "none";
         while (madre.hasChildNodes()){
             madre.removeChild(madre.firstChild);
         }
@@ -185,15 +194,18 @@ function formmsee(){
 function formvalidation(e){
     //e.preventDefault();
     let formu = e.target;
-    console.log(formu.children)
-    const parajson =`Nombre ${formu.children[0].value}
-                        Apellido ${formu.children[2].value}
-                        DNI ${formu.children[4].value}
-                        Telefono ${formu.children[6].value}
-                        Correo ${formu.children[8].value}`
+    let entradauser = $('#formulario1 input');
+    console.log(entradauser);
+    const parajson =`   ID del servicio: ${prodid}
+                        Nombre y Apellido: ${entradauser[0].value}
+                        DNI: ${entradauser[1].value}
+                        Telefono: ${entradauser[2].value}
+                        Correo: ${entradauser[3].value}`
     
 
 
     tosave = JSON.stringify(parajson);
     localStorage.setItem('formualrio1',tosave);
+    prodid = [];
+    console.log(prodid);
 }

@@ -76,6 +76,20 @@ a:hover {
         
     }
 }
+/* Formualrio*/
+#formulario1 {
+ text-align: center;
+ background-color: white;
+ border: 2px solid rgb(200,146,155);
+ margin: 10px 400px;
+ padding: 10px;
+ border-radius: 5px;
+}
+
+.campo{
+    padding: 10px;
+    align-items:flex-end;
+}
 
 /*Contenido*/
 
