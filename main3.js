@@ -30,10 +30,15 @@ btnp5.addEventListener('click',letsee.bind(this,products[1]));
 
 let btnp6 = document.getElementById('btnp6');
 btnp6.addEventListener('click',letsee.bind(this,products[2]));
+
+
 // <---------------Filtros de Cards usando jQuery ---------->
 
-
-
+$('.close').click(function () { 
+    console.log('holi parece qie sirve');
+    $('#filtre .filt').css({'display': 'none','visibility': 'hidden'});
+    qfiltros();
+    })
 // <-------------- Formulario -----------------> 
 let myform = document.getElementById('formulario1');
 myform.addEventListener('submit',formvalidation);

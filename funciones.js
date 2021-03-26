@@ -10,6 +10,16 @@ function mostrar(){
       }
 
 }
+
+function qfiltros() {  
+    if (aver =! ""){
+    $('.skins .card').css('display', 'flex');
+    $('.massage .card').css('display', 'flex');
+    $('.rehabs .card').css('display', 'flex');
+   console.log('holi');
+    }
+}
+
 let aver = [];
 // function menormayor() { 
 //     let prices = totalprod.sort((a,b) => parseFloat(a.precio) - parseFloat(b.precio));
@@ -35,6 +45,7 @@ function rehab() {
     let piel = $('.skins .card').css('display', 'none');
     let masaje = $('.massage .card').css('display', 'none');
     let padre1 = document.getElementById('shower');
+    $('#filtre .rehabs').css({'display': 'block','visibility': 'visible'}); 
     console.log(aver);
     if (aver == ""){
         for (const i of filtrados){
@@ -42,18 +53,20 @@ function rehab() {
             // li.innerHTML = i.nombre + " $" + i.precio;
             // padre1.appendChild(li);
             aver = document.getElementsByTagName('li')
+            
     }
     
     } else {
-            piel = $('.skins .card').css('display', 'flex');
-            masaje = $('.massage .card').css('display', 'flex');
-            $('.rehabs .card').css('display', 'flex');
-            while (padre1.hasChildNodes()){
-                padre1.removeChild(padre1.firstChild);
-            }
+            // piel = $('.skins .card').css('display', 'flex');
+            // masaje = $('.massage .card').css('display', 'flex');
+            // $('.rehabs .card').css('display', 'flex');
+            // while (padre1.hasChildNodes()){
+            //     padre1.removeChild(padre1.firstChild);
+            // }
         
          aver = [];
     } 
+    
 } 
 function masaj() {
 
@@ -61,6 +74,7 @@ function masaj() {
     let piel = $('.skins .card').css('display', 'none');
     let rehabi = $('.rehabs .card').css('display', 'none');
     let padre1 = document.getElementById('shower');
+    $('#filtre .massage').css({'display': 'block','visibility': 'visible'}); 
     console.log(aver);
     if (aver == ""){
         for (const i of filtrados){
@@ -71,9 +85,9 @@ function masaj() {
     }
     
     } else {
-            piel = $('.skins .card').css('display', 'flex');
-            rehabi = $('.rehabs .card').css('display', 'flex');
-            $('.massage .card').css('display', 'flex');
+            // piel = $('.skins .card').css('display', 'flex');
+            // rehabi = $('.rehabs .card').css('display', 'flex');
+            // $('.massage .card').css('display', 'flex');
             while (padre1.hasChildNodes()){
                 padre1.removeChild(padre1.firstChild);
             }
@@ -87,6 +101,7 @@ function pieles() {
     let rehabi = $('.rehabs .card').css('display', 'none');
     let masaje = $('.massage .card').css('display', 'none');
     let padre1 = document.getElementById('shower');
+    $('#filtre .skins').css({'display': 'block','visibility': 'visible'}); 
     console.log(aver);
     if (aver == ""){
         for (const i of filtrados){
@@ -98,9 +113,9 @@ function pieles() {
     }
    
     } else {
-            rehabi = $('.rehabs .card').css('display', 'flex');
-            masaje = $('.massage .card').css('display', 'flex');
-            $('.skins .card').css('display', 'flex');
+            // rehabi = $('.rehabs .card').css('display', 'flex');
+            // masaje = $('.massage .card').css('display', 'flex');
+            // $('.skins .card').css('display', 'flex');
             while (padre1.hasChildNodes()){
                 padre1.removeChild(padre1.firstChild);
             }
@@ -188,6 +203,10 @@ function formmsee(){
         ancla.style.display = "block";
       } else {
         ancla.style.display = "none";
+        let madre = document.getElementById('shower');
+        while (madre.hasChildNodes()){
+            madre.removeChild(madre.firstChild);
+        }
       }
 }
 // <------- Guardada de datos del formulario --------------> 
