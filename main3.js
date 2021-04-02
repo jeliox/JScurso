@@ -34,11 +34,19 @@ btnp6.addEventListener('click',letsee.bind(this,products[2]));
 
 // <---------------Filtros de Cards usando jQuery ---------->
 
+$('#dropdownMenu2').click(function () { 
+    console.log('holi');
+    $('.dropdown-menu').slideToggle(2000); 
+});
+
+
 $('.close').click(function () { 
     console.log('holi parece qie sirve');
-    $('#filtre .filt').css({'display': 'none','visibility': 'hidden'});
-    qfiltros();
+    // $('#filtre .filt').css({'display': 'none','visibility': 'hidden'});
+    $('#filtre .filt').fadeOut('slow',qfiltros);
+    
     })
+
 // <-------------- Formulario -----------------> 
 let myform = document.getElementById('formulario1');
 myform.addEventListener('submit',formvalidation);
