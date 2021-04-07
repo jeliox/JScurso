@@ -25,7 +25,30 @@ body {
 .text-center {
     text-align: center;
 }
-
+.mapouter {
+    margin: auto;
+    height: 200px;
+    /* The height is 400 pixels */
+    width: 250px;
+    /* The width is the width of the web page */
+  }
+  .gmap_canvas {
+    height: 200px;
+    width: 250px;
+  }
+  @media (min-width: 768px) {
+      .mapouter {
+        margin: auto;
+        height: 400px;
+        
+        width: 500px;
+      }
+    .gmap_canvas {
+        height: 400px;
+        
+        width: 500px;
+    }
+  }
 /*Barra*/
 
 .barra {
@@ -81,14 +104,19 @@ a:hover {
  text-align: center; 
  background-color: white;
  border: 2px solid rgb(200,146,155); 
- margin: 10px 400px;
+ margin: auto;
  padding: 10px;
  border-radius: 5px; 
 }
 @media (min-width: 768px){
     #formulario1 {
-        
-        align-self: center;
+        text-align: center; 
+        background-color: white;
+        border: 2px solid rgb(200,146,155); 
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+       
     }
 
 }
@@ -178,7 +206,6 @@ a:hover {
     transform: translate(0%, -50%);
     border-radius: 3px;
 }
-  
 .close:hover {
     background: #bbb;
 }

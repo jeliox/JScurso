@@ -140,7 +140,7 @@ function formvalidation(e){
         dataType: "JSON",
         success: function (response) {
            $('#shower2').html(`<h4>Su información fue enviada</h4>`);
-           $('#shower2').slideDown('slow').delay(1000).slideUp('slow')
+           $('#shower2').slideDown('slow').delay(2000).slideUp('slow')
         }
     });
     letsee();
