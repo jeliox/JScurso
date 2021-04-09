@@ -1,8 +1,6 @@
 // Simulador de productos 
 
 // <-------------------------- Botones ------------------> 
-// let btnfiltro = document.getElementById('btnfiltro');
-// btnfiltro.addEventListener('click', mostrar);
 
 let btnm = document.getElementById('btn31');
 btnm.addEventListener('click',rehab);
@@ -42,11 +40,10 @@ $('#dropdownMenu2').click(function () {
 
 $('.close').click(function () { 
     console.log('holi parece qie sirve');
-    // $('#filtre .filt').css({'display': 'none','visibility': 'hidden'});
     $('#filtre .filt').fadeOut('slow',qfiltros);
-    
     })
 
 // <-------------- Formulario -----------------> 
 let myform = document.getElementById('formulario1');
 myform.addEventListener('submit',formvalidation);
+

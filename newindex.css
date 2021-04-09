@@ -125,6 +125,15 @@ a:hover {
     padding: 10px;
     align-items:flex-end;
 } */
+.swal-button {
+    background: rgb(200,146,155);
+    color: white;
+}
+
+.swal-button:hover {
+    background: rgb(136, 99, 106);
+    color: white;
+}
 
 /*Contenido*/
 

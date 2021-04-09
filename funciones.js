@@ -1,21 +1,7 @@
 // <----------------- Este archivo contendrá las funciones a usar durante el proyecto ------------------->
 // funciones para los filtros
-function mostrar(){
-    console.log("funciona")
-    var ancla = document.getElementById('goaway');
-    if (ancla.style.display === "none") {
-        ancla.style.display = "block";
-      } else {
-        ancla.style.display = "none";
-      }
-
-}
-
 function qfiltros() {  
     if (aver =! ""){
-    // $('.skins .card').css('display', 'flex');
-    // $('.massage .card').css('display', 'flex');
-    // $('.rehabs .card').css('display', 'flex');
     $('.skins .card').slideDown('slow');
     $('.massage .card').slideDown('slow');
     $('.rehabs .card').slideDown('slow');
@@ -25,12 +11,7 @@ function qfiltros() {
 
 let aver = [];
 function rehab() {
-
-    let filtrados = totalprod.filter(element => element.id < 3);
-    // let piel = $('.skins .card').css('display', 'none');
-    // let masaje = $('.massage .card').css('display', 'none');
-    // let padre1 = document.getElementById('shower');
-    // $('#filtre .rehabs').css({'display': 'block','visibility': 'visible'}); 
+    let filtrados = totalprod.filter(element => element.id < 3); 
     $('.skins .card').slideUp('slow');
     $('.massage .card').slideUp('slow');
     $('#filtre .rehabs').fadeIn('slow');    
@@ -38,10 +19,7 @@ function rehab() {
 function masaj() {
 
     let filtrados = totalprod.filter(element => element.id < 3);
-    // let piel = $('.skins .card').css('display', 'none');
-    // let rehabi = $('.rehabs .card').css('display', 'none');
-        let padre1 = document.getElementById('shower');
-    // $('#filtre .massage').css({'display': 'block','visibility': 'visible'}); 
+    let padre1 = document.getElementById('shower');
     $('.skins .card').slideUp('slow');
     $('.rehabs .card').slideUp('slow');
     $('#filtre .massage').fadeIn('slow');
@@ -49,10 +27,6 @@ function masaj() {
 function pieles() {
 
     let filtrados = totalprod.filter(element => element.id < 3);
-    // let rehabi = $('.rehabs .card').css('display', 'none');
-    // let masaje = $('.massage .card').css('display', 'none');
-    // let padre1 = document.getElementById('shower');
-    // $('#filtre .skins').css({'display': 'block','visibility': 'visible'}); 
     $('.massage .card').slideUp('slow');
     $('.rehabs .card').slideUp('slow');
     $('#filtre .skins').fadeIn('slow');
@@ -61,20 +35,15 @@ function pieles() {
 // Funcion para obtener la info del usurario 
 function comprar(a){
     prodid= a.id;
-    let nombrecito = a.nombre;
-    a.sumaiva();
-    const iva = a.precio;
+    nombrecito = a.nombre;
     let madre = document.getElementById('shower');
     let descuen = document.createElement('h5');
     descuen.innerHTML= "El servicio seleccionado ha sido " + nombrecito.toLowerCase();
     $('#shower').prepend(descuen);
     $('#shower h5').slideDown('slow');
     console.log($('#shower h5'))
-    // madre.appendChild(descuen);
     aver = document.getElementsByTagName('h5');
     $('h5').css('text-align','center');
-    a.venta();
-    a.antiiva(); 
 }
 //<------------ funcion para comprobar si hay listas en el html ------------> 
 function letsee (son){
@@ -89,7 +58,6 @@ function letsee (son){
         let madre = document.getElementById('shower');
         let ancla = document.getElementById('formulario1')
         $('#formulario1').slideUp('slow');
-        // ancla.style.display = "none";
         while (madre.hasChildNodes()){
             madre.removeChild(madre.firstChild);
         }
@@ -115,19 +83,25 @@ function formmsee(){
 // <------- Guardada de datos del formulario --------------> 
 function formvalidation(e){
     e.preventDefault();
-
     let formu = e.target;
     let entradauser = $('#formulario1 input');
     console.log(entradauser);
     const parajson =`   ID del servicio: ${prodid}
+                        Servicio: ${nombrecito}
                         Nombre y Apellido: ${entradauser[0].value}
                         DNI: ${entradauser[1].value}
                         Telefono: ${entradauser[2].value}
                         Correo: ${entradauser[3].value}`
     
 
+console.log(parajson);
+var data= {service_id: 'service_c6a3nod',
+template_id: 'template_t7soyyg',
+user_id: 'user_QYieHBgsNts6NAHdMbA0C',
+template_params: {message:parajson}};
 
     tosave = JSON.stringify(parajson);
+    datajson= JSON.stringify(data); 
     console.log(tosave);
     localStorage.setItem('formualrio1',tosave);
     prodid = [];
@@ -141,8 +115,21 @@ function formvalidation(e){
         success: function (response) {
            $('#shower2').html(`<h4>Su información fue enviada</h4>`);
            $('#shower2').slideDown('slow').delay(2000).slideUp('slow')
+        //    swal('¡Genial!','Sus datos fueron enviados con éxito','success');
         }
     });
     letsee();
     $('#formulario1')[0].reset(); 
+   // Envio de Mail usando emailJS
+    $.ajax({
+        type: 'POST',
+        url: 'https://api.emailjs.com/api/v1.0/email/send',
+        data: datajson,
+        contentType: 'application/json',
+    }).done(function() {
+        swal('¡Genial!','Sus datos fueron enviados con éxito','success');
+    }).fail(function(error) {
+        alert('Oops... ' + JSON.stringify(error));
+    });
+    
 }
