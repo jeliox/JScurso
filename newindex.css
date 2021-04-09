@@ -49,6 +49,14 @@ body {
         width: 500px;
     }
   }
+.piccar {
+    float:none;
+    background: white;
+    width:  500px;
+    height: 400px;
+    object-fit: cover;
+}
+
 /*Barra*/
 
 .barra {
@@ -204,7 +212,7 @@ a:hover {
 }
 .imagen1 {
     width: 200px;
-    height: auto;
+    height: 100px;
 }
 .close {
     cursor: pointer;

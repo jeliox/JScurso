@@ -107,29 +107,19 @@ template_params: {message:parajson}};
     prodid = [];
     console.log(prodid);
     // la parte de AJAX
-    $.ajax({
-        type: "POST",
-        url: "https://jsonplaceholder.typicode.com/posts" ,
-        data: tosave,
-        dataType: "JSON",
-        success: function (response) {
-           $('#shower2').html(`<h4>Su información fue enviada</h4>`);
-           $('#shower2').slideDown('slow').delay(2000).slideUp('slow')
-        //    swal('¡Genial!','Sus datos fueron enviados con éxito','success');
-        }
-    });
     letsee();
     $('#formulario1')[0].reset(); 
+    swal('¡Genial!','Sus datos fueron enviados con éxito','success');
    // Envio de Mail usando emailJS
-    $.ajax({
-        type: 'POST',
-        url: 'https://api.emailjs.com/api/v1.0/email/send',
-        data: datajson,
-        contentType: 'application/json',
-    }).done(function() {
-        swal('¡Genial!','Sus datos fueron enviados con éxito','success');
-    }).fail(function(error) {
-        alert('Oops... ' + JSON.stringify(error));
-    });
+    // $.ajax({
+    //     type: 'POST',
+    //     url: 'https://api.emailjs.com/api/v1.0/email/send',
+    //     data: datajson,
+    //     contentType: 'application/json',
+    // }).done(function() {
+    //     swal('¡Genial!','Sus datos fueron enviados con éxito','success');
+    // }).fail(function(error) {
+    //     alert('Oops... ' + JSON.stringify(error));
+    // });
     
 }
