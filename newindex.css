@@ -167,6 +167,7 @@ a:hover {
 }
 .columna2 {
     width: 20rem;
+    height: auto;
     margin: 5% auto;
     padding: 10px;
     box-sizing: border-box;
@@ -221,7 +222,7 @@ a:hover {
 }
 .imagen1 {
     width: 200px;
-    height: 100px;
+    height: auto;
 }
 .close {
     cursor: pointer;
