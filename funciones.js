@@ -81,6 +81,7 @@ function formmsee(){
       }
 }
 // <------- Guardada de datos del formulario --------------> 
+
 function formvalidation(e){
     e.preventDefault();
     let formu = e.target;
@@ -109,6 +110,39 @@ template_params: {message:parajson}};
     // la parte de AJAX
     letsee();
     $('#formulario1')[0].reset(); 
+    swal('¡Genial!','Sus datos fueron enviados con éxito','success');
+   // Envio de Mail usando emailJS
+    // $.ajax({
+    //     type: 'POST',
+    //     url: 'https://api.emailjs.com/api/v1.0/email/send',
+    //     data: datajson,
+    //     contentType: 'application/json',
+    // }).done(function() {
+    //     swal('¡Genial!','Sus datos fueron enviados con éxito','success');
+    // }).fail(function(error) {
+    //     alert('Oops... ' + JSON.stringify(error));
+    // });
+    
+}
+
+function formvalidation2(e){
+    e.preventDefault();
+    let formu = e.target;
+    let entradauser = $('#formulario2 input');
+    console.log(entradauser);
+    const parajson =`   Nombre y Apellido: ${entradauser[0].value}
+                        Telefono: ${entradauser[1].value}
+                        Correo: ${entradauser[2].value}
+                        Mensaje ${entradauser[3].value}`
+    
+
+console.log(parajson);
+var data= {service_id: 'service_c6a3nod',
+template_id: 'template_t7soyyg',
+user_id: 'user_QYieHBgsNts6NAHdMbA0C',
+template_params: {message:parajson}};
+    // la parte de AJAX
+    $('#formulario2')[0].reset(); 
     swal('¡Genial!','Sus datos fueron enviados con éxito','success');
    // Envio de Mail usando emailJS
     // $.ajax({

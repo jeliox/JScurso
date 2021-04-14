@@ -47,3 +47,7 @@ $('.close').click(function () {
 let myform = document.getElementById('formulario1');
 myform.addEventListener('submit',formvalidation);
 
+let myform2 = document.getElementById('formulario2');
+myform2.addEventListener('submit',formvalidation2);
+
+

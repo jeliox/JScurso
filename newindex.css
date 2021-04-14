@@ -27,10 +27,9 @@ body {
 }
 .mapouter {
     margin: auto;
-    height: 200px;
-    /* The height is 400 pixels */
-    width: 250px;
-    /* The width is the width of the web page */
+    height: 600px;
+    width: 400px;
+    margin-left: 20px;
   }
   .gmap_canvas {
     height: 200px;
@@ -65,7 +64,16 @@ body {
         object-fit: cover;
     }
 }
-
+.titulos {
+    font-size: 51px;
+    font-family: 'Playfair Display', serif;
+    margin: 20px;
+    margin-left: 50px;
+    padding: 10px;
+}
+.otrainfo {
+    /* font-family: 'Playfair Display', serif;  */
+}
 /*Barra*/
 
 .barra {
@@ -137,6 +145,29 @@ a:hover {
     }
 
 }
+#formulario2 {
+    text-align: center; 
+    background-color: rgb(200,146,155);
+    border: 2px solid rgb(200,146,155); 
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px; 
+   }
+   @media (min-width: 768px){
+       #formulario2 {
+           text-align: center; 
+           background-color: rgb(200,146,155);
+           border: 2px solid rgb(200,146,155); 
+           margin: auto;
+           padding: 10px;
+           border-radius: 5px;
+          
+       }
+   
+   }
+   #message {
+       height: 100px;
+   }
 
 /* .campo{
     padding: 10px;
@@ -173,10 +204,6 @@ a:hover {
     box-sizing: border-box;
     align-items: center;
 }
-
-.precio {
-    font-size: 500 px;
-}
 .filt {
     display: none;
     background-color: rgb(200,146,155,0.7);
@@ -198,6 +225,19 @@ a:hover {
 
 }
 .btn:hover{
+    background-color:rgb(136, 99, 106) ;
+    color: white;
+}
+.btncon{
+    border-style: none;
+    padding: 10px;
+    margin: 6px;
+    background-color:white;
+    color: black;
+    border-radius: 5px; 
+
+}
+.btncon:hover{
     background-color:rgb(136, 99, 106) ;
     color: white;
 }
