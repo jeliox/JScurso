@@ -35,6 +35,11 @@ body {
      height: 250px;
      width: 250px;
   }
+  iframe {
+    height: 250px;
+    width: 250px;
+    margin: auto;
+}
   @media (min-width: 768px) {
       .mapouter {
 
@@ -48,14 +53,13 @@ body {
         
         width: 500px;
     }
-  }
-  @media (max-width: 768px) {
     iframe {
-        height: 250px;
-        
-        width: 250px;
+        height: 500px;
+        width: 500px;
+        margin: auto;
     }
   }
+  
 .piccar {
     float:none;
     background: white;
