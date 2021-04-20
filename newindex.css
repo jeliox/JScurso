@@ -35,11 +35,11 @@ body {
      height: 250px;
      width: 250px;
   }
-  /* iframe {
+  iframe {
     height: 250px;
     width: 250px;
     margin: auto;
-} */
+}
   @media (min-width: 768px) {
       .mapouter {
 
