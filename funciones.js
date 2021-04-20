@@ -109,7 +109,7 @@ template_params: {message:parajson}};
     console.log(prodid);
     // la parte de AJAX
     letsee();
-    $('#formulario1')[0].reset(); 
+    
     // swal('¡Genial!','Sus datos fueron enviados con éxito','success');
    // Envio de Mail usando emailJS
     $.ajax({
@@ -122,7 +122,7 @@ template_params: {message:parajson}};
     }).fail(function(error) {
         alert('Oops... ' + JSON.stringify(error));
     });
-    
+    $('#formulario1')[0].reset(); 
 }
 
 function formvalidation2(e){
@@ -135,14 +135,15 @@ function formvalidation2(e){
                         Correo: ${entradauser[2].value}
                         Mensaje ${entradauser[3].value}`
     
+    var data= {service_id: 'service_c6a3nod',
+    template_id: 'template_t7soyyg',
+    user_id: 'user_QYieHBgsNts6NAHdMbA0C',
+    template_params: {message:parajson}};
+    console.log(parajson);
+    datajson= JSON.stringify(data); 
 
-console.log(parajson);
-var data= {service_id: 'service_c6a3nod',
-template_id: 'template_t7soyyg',
-user_id: 'user_QYieHBgsNts6NAHdMbA0C',
-template_params: {message:parajson}};
     // la parte de AJAX
-    $('#formulario2')[0].reset(); 
+    
     // swal('¡Genial!','Sus datos fueron enviados con éxito','success');
    // Envio de Mail usando emailJS
     $.ajax({
@@ -155,5 +156,5 @@ template_params: {message:parajson}};
     }).fail(function(error) {
         alert('Oops... ' + JSON.stringify(error));
     });
-    
+    $('#formulario2')[0].reset(); 
 }
