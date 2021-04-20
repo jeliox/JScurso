@@ -26,14 +26,14 @@ body {
     text-align: center;
 }
 .mapouter {
-    margin: auto;
-    height: 500px;
-    width: 500px;
-    margin-left: 20px;
+    margin: 10px auto;
+    height: 250px;
+    width: 250px;
   }
   .gmap_canvas {
-    height: 500px;
-    width: 500px;
+      margin: 10px auto;
+     height: 250px;
+     width: 250px;
   }
   @media (min-width: 768px) {
       .mapouter {
@@ -47,6 +47,13 @@ body {
         height: 500px;
         
         width: 500px;
+    }
+  }
+  @media (max-width: 768px) {
+    iframe {
+        height: 250px;
+        
+        width: 250px;
     }
   }
 .piccar {
